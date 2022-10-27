@@ -180,12 +180,12 @@ RSpec.describe 'Nested hash exercises' do
       }
     end
 
-    xit 'returns the first fact for ruby' do
+    it 'returns the first fact for ruby' do
       expected_output = 'was made for programmer happiness'
       expect(find_language_facts(hash, :ruby)).to eq(expected_output)
     end
 
-    xit 'returns the second fact for javascript' do
+    it 'returns the second fact for javascript' do
       expected_output = "its real name isn't even javascript"
       expect(find_language_facts(hash, :javascript, 1)).to eq(expected_output)
     end

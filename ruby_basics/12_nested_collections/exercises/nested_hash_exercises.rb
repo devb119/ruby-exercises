@@ -41,7 +41,7 @@ end
 def find_beautiful_languages(languages)
   # Take languages and return a hash containing only languages which have the
   # key/value pair { is_beautiful?: true } listed in their information
-  languages.find{|l| l[:is_beautiful?]}
+  languages.select{|l, v| v[:is_beautiful?]}
 end
 
 def find_language_facts(languages, language_name, fact_index = 0)
@@ -49,6 +49,8 @@ def find_language_facts(languages, language_name, fact_index = 0)
   # key :facts and value of an array of strings) and return the fact
   # language_name has at fact_index of its facts array, or at index 0 if this
   # argument is not given
+
+  languages[language_name][:facts][fact_index]
 
   # the revised languages hash will look something like this:
   # {
